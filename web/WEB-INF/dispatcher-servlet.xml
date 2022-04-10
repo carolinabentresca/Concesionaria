@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+
+    <!--
+    Most controllers will use the ControllerClassNameHandlerMapping above, but
+    for the index controller we are using ParameterizableViewController, so we must
+    define an explicit mapping for it.
+    -->
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="index.htm">controlador1</prop>
+                <prop key="menu1.htm">controlador1</prop>
+                <prop key="oferta1.htm">controlador1</prop>
+                <prop key="contacto1.htm">controlador1</prop>  
+                <prop key="venta1.htm">controlador1</prop>
+                <prop key="menu2.htm">controlador2</prop>
+                <prop key="oferta2.htm">controlador2</prop> 
+                <prop key="contacto2.htm">controlador2</prop>
+                <prop key="venta2.htm">controlador2</prop> 
+                <prop key="menu3.htm">controlador3</prop>
+                <prop key="oferta3.htm">controlador3</prop> 
+                <prop key="contacto3.htm">controlador3</prop>
+                <prop key="venta3.htm">controlador3</prop> 
+                <prop key="menu4.htm">controlador4</prop>
+                <prop key="oferta4.htm">controlador4</prop> 
+                <prop key="contacto4.htm">controlador4</prop>
+                <prop key="venta4.htm">controlador4</prop> 
+            </props>
+        </property>
+    </bean>
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+
+    <!--
+    The index controller.
+    -->
+    <bean name="controlador1"  class="Controller.Controlador1" />
+    <bean name="controlador2"  class="Controller.Controlador2" />
+    <bean name="controlador3"  class="Controller.Controlador3" />
+    <bean name="controlador4"  class="Controller.Controlador4" />
+    
+</beans>
