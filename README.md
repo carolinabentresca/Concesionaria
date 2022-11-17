@@ -1,5 +1,5 @@
 
-## Proyecto Java Web / SpringMVC - Bootstrap v4.5
+## Proyecto Java Web / SpringMVC 
 ### "Simulador de Concesionaria"
 
 ![Bienvenido - Internet Explorer 9_4_2022 23_25_49](https://user-images.githubusercontent.com/88462536/162599167-0d630895-f107-4991-bd78-dee0d4c7725b.png)
